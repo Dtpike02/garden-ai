@@ -28,7 +28,7 @@ export async function POST(req: Request) {
         { role: 'user', content: question },
       ],
       temperature: 0.7,
-      max_tokens: 500,
+      max_tokens: 800,
     })
     return NextResponse.json({ answer: completion.choices[0]?.message?.content ?? '' })
   } catch (err: unknown) {
