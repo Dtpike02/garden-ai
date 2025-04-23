@@ -35,7 +35,7 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-green-100 via-green-50 to-blue-50 flex items-center justify-center p-8">
+    <main className="min-h-screen bg-gradient-to-br from-green-200 via-green-50 to-blue-50 flex items-center justify-center p-8">
       {/* Wider responsive card: adjusts at each breakpoint */}
       <div className="w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-3xl xl:max-w-4xl bg-white rounded-2xl shadow-xl p-8">
         <h1 className="text-5xl font-bold text-center text-green-800 mb-6">
@@ -49,7 +49,7 @@ export default function Home() {
           <textarea
             id="question"
             rows={4}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition placeholder-gray-500 placeholder-opacity-100"
+            className=" text-black w-full px-4 py-3 border border-green-700 300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition placeholder-gray-500 placeholder-opacity-100"
             placeholder="e.g. How to grow tomatoes in containers?"
             value={question}
             onChange={(e) => setQuestion(e.target.value)}
@@ -77,7 +77,7 @@ export default function Home() {
         </button>
 
         {answer && (
-          <div className="mt-8 bg-white border border-gray-200 rounded-lg p-6 prose max-w-none">
+          <div className="mt-8 bg-white border border-green-700 rounded-lg p-6 prose max-w-none text-black">
             <ReactMarkdown remarkPlugins={[remarkGfm]}>{answer || ''}</ReactMarkdown>
           </div>
         )}
