@@ -1,10 +1,12 @@
 // Example: src/app/subscribe/page.jsx
 'use client';
+
 import { useState, useEffect } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import { useSearchParams } from 'next/navigation'; // To read query params
 import { signIn} from 'next-auth/react';
 
+export const dynamic = 'force-dynamic';
 // Make sure to set this in your .env.local (or .env)
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!);
 const handleSignIn = () => {
