@@ -1,6 +1,6 @@
 // src/app/api/stripe/create-checkout-session/route.ts
 import { getServerSession } from "next-auth/next";
-import { authOptions } from '../../auth/[...nextauth]/route'; // Adjust path if needed
+import { authOptions } from "../../../../../lib/authOptions"; // Adjust path if needed
 import prisma from '../../../../../lib/prisma'; // Adjust path if needed
 import { stripe } from '../../../../../lib/stripe'; // Adjust path if needed
 import { NextResponse, NextRequest } from 'next/server';

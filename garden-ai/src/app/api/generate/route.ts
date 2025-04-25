@@ -1,6 +1,6 @@
 // src/app/api/generate/route.ts
 import { getServerSession } from 'next-auth/next';
-import { authOptions } from '../auth/[...nextauth]/route'; // Verify path
+import { authOptions } from '../../../../lib/authOptions'; // Verify path
 import OpenAI from 'openai';
 import { NextRequest, NextResponse } from 'next/server';
 
