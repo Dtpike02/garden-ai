@@ -1,39 +1,78 @@
 // src/app/api/generate/route.ts
-import { NextResponse } from 'next/server'
-import OpenAI from 'openai'
+import { getServerSession } from 'next-auth/next';
+import { authOptions } from '../auth/[...nextauth]/route'; // Verify path
+import OpenAI from 'openai';
+import { NextRequest, NextResponse } from 'next/server';
 
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
+const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
-export async function POST(req: Request) {
-  const { question } = await req.json()
-  if (!question) {
-    return NextResponse.json({ error: 'No question provided.' }, { status: 400 })
-  }
-  try {
-    const completion = await openai.chat.completions.create({
-      model: 'gpt-4o-mini',
-      messages: [
-        { role: 'system', content: [
-    "You are **GardenWise**, an AI assistant and expert in all things gardening and farming.",
-    "- Your audience ranges from complete beginners to seasoned hobbyists.",
-    "- You explain plant biology, soil science, pest management, seed starting, fertilization, irrigation, crop rotation, greenhouse care, and season-extension techniques.",
-    "- Always ask clarifying questions if the user’s request is ambiguous (e.g. “Which zone are you in?”).",
-    "- Provide step-by-step guidance, numbered or bulleted when helpful.",
-    "- Suggest low-cost, sustainable, and organic options whenever possible.",
-    "- Call out common pitfalls (“Be careful not to overwater seedlings—they’ll rot.”).",
-    "- If a question is truly out of scope (e.g. veterinary advice), politely decline.",
-    "- Keep your tone friendly, encouraging, and jargon-light; explain technical terms in plain English.",
-    "- When relevant, point the user to USDA hardiness zones, local extension services, or reputable online resources."
-  ].join("\n") },
-        { role: 'user', content: question },
-      ],
-      temperature: 0.7,
-      max_tokens: 800,
-    })
-    return NextResponse.json({ answer: completion.choices[0]?.message?.content ?? '' })
-  } catch (err: unknown) {
-    console.error(err)
-    const errorMessage = err instanceof Error ? err.message : 'An unknown error occurred';
-    return NextResponse.json({ error: errorMessage }, { status: 500 })
-  }
+// Define the expected structure for chat messages (matching OpenAI's format)
+interface ChatMessage {
+    role: 'user' | 'assistant' | 'system'; // Roles OpenAI expects
+    content: string;
+}
+
+// Expect an array of messages in the request body
+interface PostRequestBody {
+    messages: ChatMessage[]; // Changed from 'prompt'
+}
+
+export async function POST(req: NextRequest): Promise<NextResponse> {
+    const session = await getServerSession(authOptions);
+    if (!session || !session.user) {
+        return NextResponse.json({ error: 'Not signed in' }, { status: 401 });
+    }
+
+    let messages: ChatMessage[] | undefined;
+    try {
+        // Expect 'messages' array in the body
+        const body: PostRequestBody = await req.json();
+        messages = body.messages;
+    } catch (error) {
+       console.error("Error parsing request body:", error);
+       return NextResponse.json({ error: 'Invalid request body' }, { status: 400 });
+    }
+
+    if (!messages || !Array.isArray(messages) || messages.length === 0) {
+        return NextResponse.json({ error: 'No messages provided' }, { status: 400 });
+    }
+
+    // Optional: Ensure the last message is from the user for context
+    if (messages[messages.length - 1].role !== 'user') {
+         return NextResponse.json({ error: 'Conversation flow error: last message must be from user' }, { status: 400 });
+    }
+
+    try {
+        // --- Prepare messages for OpenAI ---
+        // You can prepend the system message here if it's not part of the history sent from the client
+        const messagesToSend: ChatMessage[] = [
+            { role: 'system', content: 'You are an expert gardening assistant.' },
+            ...messages // Add the history received from the client
+        ];
+        // Or, if the client sends the full history including the system prompt:
+        // const messagesToSend = messages;
+
+        console.log(`Sending ${messagesToSend.length} messages to OpenAI...`);
+
+        const completion = await openai.chat.completions.create({
+            model: 'gpt-3.5-turbo',
+            messages: messagesToSend, // Pass the full conversation history
+            max_tokens: 800, // Adjust token limit as needed
+        });
+
+        const content = completion.choices?.[0]?.message?.content?.trim() ?? 'AI did not provide a response.';
+
+        // Return only the latest AI response text
+        return NextResponse.json({ text: content });
+
+    } catch (error) {
+         console.error("Error calling OpenAI API:", error);
+         let errorMessage = 'Failed to fetch response from AI';
+         if (error instanceof OpenAI.APIError) {
+            errorMessage = `OpenAI API Error: ${error.status} ${error.message}`;
+         } else if (error instanceof Error) {
+             errorMessage = error.message;
+         }
+         return NextResponse.json({ error: errorMessage }, { status: 500 });
+    }
 }
