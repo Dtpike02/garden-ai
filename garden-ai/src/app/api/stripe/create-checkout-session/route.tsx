@@ -45,6 +45,7 @@ export async function POST(req: NextRequest) {
             payment_method_types: ['card'],
             line_items: [ { price: PRICE_ID, quantity: 1 } ],
             mode: 'subscription',
+            allow_promotion_codes: true,
             success_url: `${YOUR_DOMAIN}/ask?subscribed=true&session_id={CHECKOUT_SESSION_ID}`,
             cancel_url: `${YOUR_DOMAIN}/ask?cancelled=true`,
             // --- THIS IS THE CRITICAL FIX ---
