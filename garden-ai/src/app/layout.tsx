@@ -1,6 +1,7 @@
 import Script from 'next/script';
 import '../globals.css';   // adjust path if you placed it in /styles
 import { Providers } from './providers';
+import { Analytics } from "@vercel/analytics/react"
 
 export const metadata = { title: 'AI Gardening Assistant' };
 
@@ -12,6 +13,7 @@ const META_PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID || '';
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
+      <Analytics />
       <body className="min-h-screen bg-gray-50">
         <Providers>{children}</Providers>
         {/* --- Meta Pixel Code --- */}
@@ -37,7 +39,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             </Script>
             <noscript>
               <img height="1" width="1" style={{ display: 'none' }}
-                   src={`https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1`} />
+                  src={`https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1`} />
             </noscript>
           </>
         )}

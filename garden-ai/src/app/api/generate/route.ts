@@ -55,7 +55,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
         console.log(`Sending ${messagesToSend.length} messages to OpenAI...`);
 
         const completion = await openai.chat.completions.create({
-            model: 'gpt-3.5-turbo',
+            model: 'gpt-4o',
             messages: messagesToSend, // Pass the full conversation history
             max_tokens: 800, // Adjust token limit as needed
         });
