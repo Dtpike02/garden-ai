@@ -53,7 +53,7 @@ export default function AskPage() {
   // --- Authentication Check/Redirect ---
   useEffect(() => {
     if (status === 'unauthenticated') {
-      router.replace('/auth/signin?callbackUrl=/ask');
+      router.replace('/');
     }
   }, [status, router]);
 
