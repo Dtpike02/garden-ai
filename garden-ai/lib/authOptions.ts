@@ -36,7 +36,6 @@ export const authOptions: AuthOptions = {
         // Add signIn callback here if you revert to pre-signup flow later
     },
     pages: {
-        signIn: '/auth/signin',
         error: '/auth/error',
     },
     debug: false,
