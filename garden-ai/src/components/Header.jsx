@@ -26,7 +26,7 @@ export default function Header() {
       <div className='flex items-center gap-2 sm:gap-3'>
         <Image src="/Logo.png" alt="Logo" width={40} height={40} className="rounded-full" />
         <Link href="/" className="text-xl font-bold hover:opacity-90 transition-opacity">
-          AI Gardener
+          Garden AI
         </Link>
       </div>
 

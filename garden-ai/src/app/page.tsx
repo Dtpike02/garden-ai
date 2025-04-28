@@ -124,7 +124,7 @@ export default function HomePage() {
         <section className="py-16 md:py-24 bg-white">
           <div className="container mx-auto px-6 text-center">
             <h2 className="text-3xl md:text-4xl font-semibold text-gray-800 mb-12">
-              Why Choose AI Gardener?
+              Why Choose Garden AI?
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
               {/* Feature 1 */}
@@ -190,7 +190,7 @@ export default function HomePage() {
       {/* ... (Keep footer as is) ... */}
       <footer className="flex-shrink-0 bg-gray-800 text-gray-400 py-6 text-center text-sm">
         <div className="container mx-auto px-6">
-          &copy; {new Date().getFullYear()} AI Gardening Assistant. All rights reserved.
+          &copy; {new Date().getFullYear()} Garden AI. All rights reserved.
         </div>
       </footer>
     </div>
