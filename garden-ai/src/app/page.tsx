@@ -114,7 +114,7 @@ export default function HomePage() {
               disabled={isLoading || status === 'loading'}
               className="inline-block bg-white text-green-700 font-semibold py-3 px-8 rounded-lg shadow-md text-lg hover:bg-gray-100 transition duration-300 ease-in-out transform hover:-translate-y-1 disabled:opacity-70 disabled:cursor-wait"
             >
-              {isLoading ? 'Processing...' : 'Get Started Now'}
+              {isLoading ? 'Processing...' : 'Solve My Plant Problems'}
             </button>
             {error && <p className="text-red-200 text-sm mt-4">{error}</p>}
           </div>
@@ -148,7 +148,7 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-
+        
         {/* --- How It Works Section --- */}
         {/* ... (Keep this section as is) ... */}
          <section className="py-16 md:py-24 bg-gray-100">
