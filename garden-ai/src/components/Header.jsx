@@ -24,7 +24,7 @@ export default function Header() {
   return (
     <header className="flex items-center justify-between p-4 bg-gradient-to-r from-green-600 to-teal-600 text-white shadow-md h-16 flex-shrink-0">
       <div className='flex items-center gap-2 sm:gap-3'>
-        <Image src="/logo.png" alt="Logo" width={40} height={40} className="rounded-full" />
+        <Image src="/Logo.png" alt="Logo" width={40} height={40} className="rounded-full" />
         <Link href="/" className="text-xl font-bold hover:opacity-90 transition-opacity">
           AI Gardener
         </Link>

@@ -157,7 +157,7 @@ export default function AskPage() {
             )}
 
             {/* --- Chat History Area --- */}
-            <div ref={chatContainerRef} className={` bg-[url('../public/logo.png')] flex-grow overflow-y-auto mb-4 p-4 space-y-8 bg-white rounded-lg border border-gray-200 shadow-sm ${!isActiveSubscriber ? 'opacity-50' : ''} bg-center bg-cover bg-white/80 bg-blend-overlay`}>
+            <div ref={chatContainerRef} className={` bg-[url('/logo.png')] flex-grow overflow-y-auto mb-4 p-4 space-y-8 bg-white rounded-lg border border-gray-200 shadow-sm ${!isActiveSubscriber ? 'opacity-50' : ''} bg-center bg-cover bg-white/80 bg-blend-overlay`}>
                {/* Welcome Message */}
                {chatHistory.length === 0 && !isLoading && isActiveSubscriber && (
                   <p className="text-center text-3xl text-gray-500 p-4">Welcome to AI Gardener! How can I help your garden today?</p>
