@@ -100,7 +100,7 @@ export default function HomePage() {
       {/* --- Main Content --- */}
       <main className="flex-grow">
         {/* --- Hero Section --- */}
-        <section className="bg-gradient-to-br from-green-600 via-teal-600 to-cyan-600 text-white pt-20 pb-24 text-center">
+        <section className=" min-h-[75vh] bg-[url('../public/hero.png')] bg-cover bg-center text-white pt-20 pb-24 flex items-center justify-center text-center">
           <div className="container mx-auto px-6">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
               Your Personal AI Gardening Expert
@@ -158,7 +158,7 @@ export default function HomePage() {
                 </h2>
                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left md:text-center max-w-4xl mx-auto">
                      <div className="p-6 bg-white rounded-lg shadow hover:shadow-2xl hover:scale-105 hover:bg-gray-50 transition-transform transition-shadow duration-300 ease-out"><span className="text-3xl font-bold text-green-500 block mb-2">1</span><h4 className="font-semibold text-lg mb-1 text-gray-700">Sign Up / Log In</h4><p className="text-sm text-gray-600">Create your account or log in instantly using Google.</p></div>
-                      <div className="p-6 bg-white rounded-lg shadow hover:shadow-2xl hover:scale-105 hover:bg-gray-50 transition-transform transition-shadow duration-300 ease-out"><span className="text-3xl font-bold text-green-500 block mb-2">2</span><h4 className="font-semibold text-lg mb-1 text-gray-700">Subscribe (If Required)</h4><p className="text-sm text-gray-600">Choose a plan to unlock full access to the AI assistant features.</p></div>
+                      <div className="p-6 bg-white rounded-lg shadow hover:shadow-2xl hover:scale-105 hover:bg-gray-50 transition-transform transition-shadow duration-300 ease-out"><span className="text-3xl font-bold text-green-500 block mb-2">2</span><h4 className="font-semibold text-lg mb-1 text-gray-700">Subscribe</h4><p className="text-sm text-gray-600">Choose a plan to unlock full access to the AI assistant features.</p></div>
                       <div className="p-6 bg-white rounded-lg shadow hover:shadow-2xl hover:scale-105 hover:bg-gray-50 transition-transform transition-shadow duration-300 ease-out"><span className="text-3xl font-bold text-green-500 block mb-2">3</span><h4 className="font-semibold text-lg mb-1 text-gray-700">Ask Anything!</h4><p className="text-sm text-gray-600">Start chatting with the AI and get expert gardening advice instantly.</p></div>
                  </div>
              </div>
