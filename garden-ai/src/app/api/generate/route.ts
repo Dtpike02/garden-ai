@@ -42,6 +42,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
          return NextResponse.json({ error: 'Conversation flow error: last message must be from user' }, { status: 400 });
     }
 
+    
     try {
         // --- Prepare messages for OpenAI ---
         // You can prepend the system message here if it's not part of the history sent from the client
