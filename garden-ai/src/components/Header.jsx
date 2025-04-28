@@ -3,6 +3,7 @@
 import { signIn, signOut, useSession } from 'next-auth/react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 export default function Header() {
   const { data: session, status } = useSession();
@@ -22,9 +23,12 @@ export default function Header() {
 
   return (
     <header className="flex items-center justify-between p-4 bg-gradient-to-r from-green-600 to-teal-600 text-white shadow-md h-16 flex-shrink-0">
-      <Link href="/" className="text-xl font-bold hover:opacity-90 transition-opacity">
-        AI Gardener
-      </Link>
+      <div className='flex items-center gap-2 sm:gap-3'>
+        <Image src="/logo.png" alt="Logo" width={40} height={40} className="rounded-full" />
+        <Link href="/" className="text-xl font-bold hover:opacity-90 transition-opacity">
+          AI Gardener
+        </Link>
+      </div>
 
       {/* --- Auth Buttons & Links --- */}
       <div className="flex items-center gap-3 sm:gap-4">
