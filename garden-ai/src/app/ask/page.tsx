@@ -157,10 +157,10 @@ export default function AskPage() {
             )}
 
             {/* --- Chat History Area --- */}
-            <div ref={chatContainerRef} className={`flex-grow overflow-y-auto mb-4 p-4 space-y-6 bg-white rounded-lg border border-gray-200 shadow-sm ${!isActiveSubscriber ? 'opacity-50' : ''}`}>
+            <div ref={chatContainerRef} className={` bg-[url('../public/logo.png')] flex-grow overflow-y-auto mb-4 p-4 space-y-8 bg-white rounded-lg border border-gray-200 shadow-sm ${!isActiveSubscriber ? 'opacity-50' : ''} bg-center bg-cover bg-white/80 bg-blend-overlay`}>
                {/* Welcome Message */}
                {chatHistory.length === 0 && !isLoading && isActiveSubscriber && (
-                  <p className="text-center text-sm text-gray-500 p-4">Start the conversation by asking a gardening question!</p>
+                  <p className="text-center text-3xl text-gray-500 p-4">Welcome to AI Gardener! How can I help your garden today?</p>
                )}
                {/* History Mapping */}
                {chatHistory.map((message, index) => (
@@ -227,7 +227,7 @@ export default function AskPage() {
                 onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setCurrentPrompt(e.target.value)}
                 onKeyDown={(e: KeyboardEvent<HTMLTextAreaElement>) => handleKeyDown(e)}
                 placeholder={isActiveSubscriber ? "Ask about your garden..." : "Subscription required to chat"}
-                className={`flex-grow p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-green-500 focus:border-transparent resize-none text-sm sm:text-base leading-relaxed transition duration-150 ease-in-out ${!isActiveSubscriber ? 'bg-gray-200 cursor-not-allowed' : 'bg-white'}`}
+                className={` flex-grow p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-green-500 focus:border-transparent resize-none text-sm sm:text-base leading-relaxed transition duration-150 ease-in-out ${!isActiveSubscriber ? 'bg-gray-200 cursor-not-allowed' : 'bg-white'}`}
                 disabled={isLoading || !isActiveSubscriber}
                 maxRows={6} // Limit auto-growth height
                 minRows={1} // Start small
