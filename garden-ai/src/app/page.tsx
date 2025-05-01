@@ -108,18 +108,79 @@ export default function HomePage() {
             </div>
           </section>
 
-          {/* Features Section (unchanged) */}
-          {/* ... */}
+          {/* --- Features Section --- */}
+        <section className="py-16 md:py-24 bg-white">
+          <div className="container mx-auto px-6 text-center">
+            <h2 className="text-3xl md:text-4xl font-semibold text-gray-800 mb-12">
+              Why Choose Garden AI?
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
+              {/* Feature 1 */}
+              <div className=" rounded-2xl p-6 flex flex-col items-center hover:shadow-2xl hover:scale-105 hover:bg-gray-50 transition-transform transition-shadow duration-300 ease-out">
+                 <div className="bg-green-100 rounded-full p-4 mb-4 inline-block"><SparklesIcon className="h-10 w-10 text-green-600" /></div>
+                 <h3 className="text-xl font-semibold text-gray-700 mb-2">Instant AI Advice</h3>
+                 <p className="text-gray-600 text-center leading-relaxed">No more endless searching. Get immediate, AI-powered answers to your specific gardening questions, 24/7.</p>
+              </div>
+              {/* Feature 2 */}
+              <div className="rounded-2xl p-6 flex flex-col items-center hover:shadow-2xl hover:scale-105 hover:bg-gray-50 transition-transform transition-shadow duration-300 ease-out">
+                <div className="bg-teal-100 rounded-full p-4 mb-4 inline-block"><WrenchScrewdriverIcon className="h-10 w-10 text-teal-600" /></div>
+                <h3 className="text-xl font-semibold text-gray-700 mb-2">Problem Diagnosis</h3>
+                <p className="text-gray-600 text-center leading-relaxed">Describe your plant&apos;s symptoms, and our AI can help identify potential diseases, pests, or nutrient deficiencies.</p>
+              </div>
+              {/* Feature 3 */}
+              <div className="rounded-2xl p-6 flex flex-col items-center hover:shadow-2xl hover:scale-105 hover:bg-gray-50 transition-transform transition-shadow duration-300 ease-out">
+                 <div className="bg-cyan-100 rounded-full p-4 mb-4 inline-block"><SunIcon className="h-10 w-10 text-cyan-600" /></div>
+                 <h3 className="text-xl font-semibold text-gray-700 mb-2">Personalized Care Tips</h3>
+                 <p className="text-gray-600 text-center leading-relaxed">Receive tailored advice on watering, fertilizing, lighting, and pruning based on your specific plants and conditions.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        {/* --- How It Works Section --- */}
+        {/* ... (Keep this section as is) ... */}
+         <section className="py-16 md:py-24 bg-gray-100">
+             <div className="container mx-auto px-6 text-center">
+                <h2 className="text-3xl md:text-4xl font-semibold text-gray-800 mb-12">
+                    Get Started in 3 Easy Steps
+                </h2>
+                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left md:text-center max-w-4xl mx-auto">
+                     <div className="p-6 bg-white rounded-lg shadow hover:shadow-2xl hover:scale-105 hover:bg-gray-50 transition-transform transition-shadow duration-300 ease-out"><span className="text-3xl font-bold text-green-500 block mb-2">1</span><h4 className="font-semibold text-lg mb-1 text-gray-700">Sign Up / Log In</h4><p className="text-sm text-gray-600">Create your account or log in instantly using Google.</p></div>
+                      <div className="p-6 bg-white rounded-lg shadow hover:shadow-2xl hover:scale-105 hover:bg-gray-50 transition-transform transition-shadow duration-300 ease-out"><span className="text-3xl font-bold text-green-500 block mb-2">2</span><h4 className="font-semibold text-lg mb-1 text-gray-700">Subscribe</h4><p className="text-sm text-gray-600">Choose a plan to unlock full access to the AI assistant features.</p></div>
+                      <div className="p-6 bg-white rounded-lg shadow hover:shadow-2xl hover:scale-105 hover:bg-gray-50 transition-transform transition-shadow duration-300 ease-out"><span className="text-3xl font-bold text-green-500 block mb-2">3</span><h4 className="font-semibold text-lg mb-1 text-gray-700">Ask Anything!</h4><p className="text-sm text-gray-600">Start chatting with the AI and get expert gardening advice instantly.</p></div>
+                 </div>
+             </div>
+        </section>
 
-          {/* How It Works Section */}
-          {/* ... */}
+        {/* --- Final Call to Action Section --- */}
+        <section className="py-16 md:py-24 bg-green-700 text-white">
+          <div className="container mx-auto px-6 text-center ">
+            <h2 className="text-3xl md:text-4xl font-semibold mb-6">
+              Ready to Grow a Healthier Garden?
+            </h2>
+            <p className="text-lg md:text-xl mb-8 text-green-100 max-w-2xl mx-auto">
+              Stop guessing and start growing with confidence. Sign up today!
+            </p>
+            {/* --- Use Button with onClick handler --- */}
+            <button
+              onClick={handleGetStartedClick}
+              disabled={isLoading || status === 'loading'}
+              className="inline-block bg-white text-green-700 font-semibold py-3 px-8 rounded-lg shadow-md text-lg hover:bg-gray-100 transition duration-300 ease-in-out transform hover:-translate-y-1 disabled:opacity-70 disabled:cursor-wait"
+            >
+              {isLoading ? 'Processing...' : 'Get Started'}
+            </button>
+             {error && <p className="text-red-200 text-sm mt-4">{error}</p>}
+          </div>
+        </section>
+      </main>
 
-          {/* Final CTA Section */}
-          {/* ... */}
-        </main>
-
-        {/* Footer */}
-        {/* ... */}
+      {/* --- Footer --- */}
+      {/* ... (Keep footer as is) ... */}
+      <footer className="flex-shrink-0 bg-gray-800 text-gray-400 py-6 text-center text-sm">
+        <div className="container mx-auto px-6">
+          &copy; {new Date().getFullYear()} Garden AI. All rights reserved.
+        </div>
+      </footer>
       </div>
     </>
   );
