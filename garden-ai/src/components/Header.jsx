@@ -31,6 +31,9 @@ export default function Header() {
       </div>
 
       {/* --- Auth Buttons & Links --- */}
+      <Link href="/blog" className="text-xl font-bold hover:opacity-90 transition-opacity hover:text-white/80 hidden sm:inline-block">
+          Blog
+      </Link>
       <div className="flex items-center gap-3 sm:gap-4">
         {/* Loading State */}
         {status === "loading" && (
