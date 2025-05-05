@@ -11,6 +11,7 @@ const config = {
   plugins: [
     typography,
   ],
+  
 };
 
 export default config;
