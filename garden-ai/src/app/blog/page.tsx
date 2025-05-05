@@ -15,7 +15,7 @@ const blogPosts = [
     description: 'Learn everything you need to know to plan, plant, and harvest your own delicious vegetables.'
   },
   {
-    slug: 'organic-pest-control', // Assuming this matches the slug for the pest control post
+    slug: 'natural-pest-remedies', // Assuming this matches the slug for the pest control post
     title: 'Organic Pest Control Remedies for Your Garden',
     description: 'Discover eco-friendly ways to manage garden pests and protect your precious plants naturally.'
   },

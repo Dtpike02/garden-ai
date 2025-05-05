@@ -11,6 +11,14 @@ export default function VegetableGardening() {
   const firstFrostApprox = "mid-October"; // Approximate first fall frost for Columbus, OH
   return (
     <article className="prose lg:prose-xl mx-auto py-16 bg-white rounded-2xl shadow-lg overflow-hidden p-8">
+      {/* Hero Image */}
+            <Image
+              width={1200}
+              height={800}
+              src="/veggie-garden.jpeg"
+              alt="Natural pest control setup"
+              className="w-full h-64 object-cover rounded-md mb-8"
+            />
       {/* Article Header */}
       <header className="mb-8 border-b pb-4">
             <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">The Complete Guide to Starting Your Own Vegetable Garden</h1>
