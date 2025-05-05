@@ -2,7 +2,25 @@ import { ReactNode } from 'react';
 import Head from 'next/head';
 import Header from '@/components/Header';
 //import Link from 'next/link';
-
+export const metadata = {
+  title: 'Garden AI – AI-Powered Gardening Assistant',
+  description:
+    'Welcome to Garden AI, your AI-powered gardening assistant. Diagnose plant issues, get watering and fertilization tips, and receive personalized care advice to grow a thriving garden.',
+  openGraph: {
+    title: 'Garden AI – AI-Powered Gardening Assistant',
+    description:
+      'Welcome to Garden AI, your AI-powered gardening assistant. Diagnose plant issues, get watering and fertilization tips, and receive personalized care advice to grow a thriving garden.',
+    url: 'https://gardenai.me',
+    siteName: 'Garden AI',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Garden AI – AI-Powered Gardening Assistant',
+    description:
+      'Welcome to Garden AI, your AI-powered gardening assistant. Diagnose plant issues, get watering and fertilization tips, and receive personalized care advice to grow a thriving garden.',
+  },
+};
 export default function PostLayout({ children }: { children: ReactNode }) {
   return (
     <>
