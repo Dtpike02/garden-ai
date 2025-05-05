@@ -2,14 +2,14 @@ import Image from "next/image";
 
 export const metadata = {
   title: 'Indoor Plant Care: The Complete Guide',
-  description: 'Learn how to care for indoor plants—light, water, soil, and troubleshooting tips.'
+  description: 'Learn essential indoor plant care techniques—from light requirements and watering to soil blends and pest control—to keep your houseplants thriving year-round.'
 };
 export default function IndoorPlantCare() {
   return (
     <article className="prose lg:prose-xl mx-auto py-16 bg-white rounded-2xl shadow-lg overflow-hidden p-8">
       {/* Hero Image */}
       <Image
-        src="/images/indoor-plant-hero.jpg"
+        src="/indoor-garden.png"
         alt="A lush, bright indoor garden"
         className="w-full h-64 object-cover rounded-md mb-8"
         width={800}

@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export const metadata = {
   title: 'Seasonal Vegetable Gardening Calendar',
-  description: 'A month-by-month guide to planting, growing, and harvesting your vegetable garden.'
+  description: 'Follow our month-by-month vegetable gardening calendar with expert tips on planting, care, and harvest to maximize your garden’s yield and flavor.'
 };
 export default function VegetableGardening() {
 
