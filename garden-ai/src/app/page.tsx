@@ -3,6 +3,7 @@
 'use client';
 
 import Head from 'next/head';
+import Image from 'next/image';
 import Header from '@/components/Header'; // Adjust path if needed
 import { useSession, signIn } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
@@ -15,6 +16,7 @@ import {
   WrenchScrewdriverIcon,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   SunIcon,
+  UserCircleIcon,
 } from '@heroicons/react/24/outline';
 
 // Initialize Stripe.js outside component
@@ -132,6 +134,53 @@ export default function HomePage() {
                  <div className="bg-cyan-100 rounded-full p-4 mb-4 inline-block"><SunIcon className="h-10 w-10 text-cyan-600" /></div>
                  <h3 className="text-xl font-semibold text-gray-700 mb-2">Personalized Care Tips</h3>
                  <p className="text-gray-600 text-center leading-relaxed">Receive tailored advice on watering, fertilizing, lighting, and pruning based on your specific plants and conditions.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className=' flex flex-col items-center justify-center bg-gray-100'>
+          <h2 className='text-3xl md:text-4xl font-semibold text-gray-800 mx-auto text-center mt-12'>It&apos;s As Easy As Texting!</h2>
+          <section className="py-16 md:py-24 flex flex-row">
+          <Image
+            src="/Example 1.png"
+            alt="Hero Image"
+            width={500}
+            height={500}
+            className="mx-auto rounded-lg shadow-lg"
+          />
+          <Image
+            src="/Example 2.png"
+            alt="Hero Image"
+            width={500}
+            height={500}
+            className="mx-auto rounded-lg shadow-lg"
+          />
+
+        </section>
+        </section>
+        <section className="py-16 md:py-24 bg-white">
+          <div className="container mx-auto px-6 text-center">
+            <h2 className="text-3xl md:text-4xl font-semibold text-gray-800 mb-12">
+              What Our Users Are Saying
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
+              {/* Testimonial 1 */}
+              <div className="rounded-2xl p-6 flex flex-col items-center hover:shadow-2xl hover:scale-105 hover:bg-gray-50 transition-transform transition-shadow duration-300 ease-out">
+                <div className="bg-green-100 rounded-full p-4 mb-4 inline-block"><UserCircleIcon className="h-10 w-10 text-green-600" /></div>
+                <h3 className="text-xl font-semibold text-gray-700 mb-2">Sarah J.</h3>
+                <p className="text-gray-600 text-center leading-relaxed">&quot;Garden AI has transformed my gardening experience. I can finally understand what my plants need!&quot;</p>
+              </div>
+              {/* Testimonial 2 */}
+              <div className="rounded-2xl p-6 flex flex-col items-center hover:shadow-2xl hover:scale-105 hover:bg-gray-50 transition-transform transition-shadow duration-300 ease-out">
+                <div className="bg-teal-100 rounded-full p-4 mb-4 inline-block"><UserCircleIcon className="h-10 w-10 text-teal-600" /></div>
+                <h3 className="text-xl font-semibold text-gray-700 mb-2">Mark T.</h3>
+                <p className="text-gray-600 text-center leading-relaxed">&quot;I love how easy it is to get expert advice. My plants have never looked better!&quot;</p>
+              </div>
+              {/* Testimonial 3 */}
+              <div className="rounded-2xl p-6 flex flex-col items-center hover:shadow-2xl hover:scale-105 hover:bg-gray-50 transition-transform transition-shadow duration-300 ease-out">
+                <div className="bg-cyan-100 rounded-full p-4 mb-4 inline-block"><UserCircleIcon className="h-10 w-10 text-cyan-600" /></div>
+                <h3 className="text-xl font-semibold text-gray-700 mb-2">Emily R.</h3>
+                <p className="text-gray-600 text-center leading-relaxed">&quot;The personalized care tips have made a world of difference. I can finally keep my plants healthy!&quot;</p>
               </div>
             </div>
           </div>
