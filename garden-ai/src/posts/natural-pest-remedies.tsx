@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export const metadata = {
   title: 'Organic Pest Control Remedies for Your Garden',
-  description: 'Discover safe, organic methods to combat common garden pests without harmful chemicals.'
+  description: 'Discover effective organic pest control remedies—like neem oil, companion planting, and beneficial insects—to protect your garden naturally and sustainably.'
 };
 export default function NaturalPestRemedies() {
   return (
