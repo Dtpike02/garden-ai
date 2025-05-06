@@ -143,14 +143,14 @@ export default function HomePage() {
           <section className="py-16 md:py-24 flex flex-row">
           <Image
             src="/Example 1.png"
-            alt="Hero Image"
+            alt="Example use of 'texting' the AI to get an answer"
             width={500}
             height={500}
             className="mx-auto rounded-lg shadow-lg"
           />
           <Image
             src="/Example 2.png"
-            alt="Hero Image"
+            alt="Example use of 'texting' the AI to get an answer"
             width={500}
             height={500}
             className="mx-auto rounded-lg shadow-lg"
