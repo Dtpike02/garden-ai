@@ -21,6 +21,9 @@ export const metadata = {
     description:
       'Welcome to Garden AI, your AI-powered gardening assistant. Diagnose plant issues, get watering and fertilization tips, and receive personalized care advice to grow a thriving garden.',
   },
+  alternates: {
+    canonical: 'https://gardenai.me',
+  },
 };
 
 import { ReactNode } from 'react';
