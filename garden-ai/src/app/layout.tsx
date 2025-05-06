@@ -49,6 +49,15 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         {/* ===== Added: Sitemap reference ===== */}
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
 
+        <meta property="og:title" content={metadata.openGraph.title} />
+        <meta property="og:description" content={metadata.openGraph.description} />
+        <meta property="og:url" content={metadata.openGraph.url} />
+        <meta property="og:type" content={metadata.openGraph.type} />
+        <meta name="twitter:card" content={metadata.twitter.card} />
+        <meta name="twitter:title" content={metadata.twitter.title} />
+        <meta name="twitter:description" content={metadata.twitter.description} />
+
+
         {/* ===== Added: JSON-LD WebSite schema with SearchAction ===== */}
         <script type="application/ld+json">
           {`{
