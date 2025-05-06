@@ -39,6 +39,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         {META_PIXEL_ID && (
           <>
           <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charSet="UTF-8" />
+        <meta name="theme-color" content="#4ade80" />
         {/* ===== Added: Robots meta ===== */}
         <meta name="robots" content="index, follow" />
         {/* ===== Added: Canonical URL ===== */}
