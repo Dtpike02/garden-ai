@@ -127,13 +127,31 @@ export default function AskPage() {
         <Head>
           <title>Chat with Our AI Gardening Assistant | Garden AI</title>
           <meta name="description" content="Talk to our AI plant expert to diagnose issues, get watering & fertilization tips, and keep your garden thriving. Sign up to start!" />
+          <script type="application/ld+json">
+          {`{
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {"@type":"Question","name":"Can I diagnose root rot?","acceptedAnswer":{"@type":"Answer","text":"Yes—describe symptoms or upload a photo, and our AI will identify root rot."}},
+              {"@type":"Question","name":"How accurate are watering recommendations?","acceptedAnswer":{"@type":"Answer","text":"AI tailors tips to plant type and local climate data for optimal accuracy."}},
+              {"@type":"Question","name":"What else can I ask?","acceptedAnswer":{"@type":"Answer","text":"Ask about pest ID, fertilization schedules, seasonal care, and more!"}}
+            ]
+          }`}
+        </script>
         </Head>
         <div className="flex flex-col h-screen bg-gradient-to-b from-gray-100 via-white to-gray-100">
+        <nav aria-label="On-Page Navigation" className="mb-4">
+        <ul className="flex gap-4 text-sm text-green-700">
+          <li><a href="#seo-intro" className="hover:underline">About This Tool</a></li>
+          <li><a href="#chat-history" className="hover:underline">Chat Window</a></li>
+          <li><a href="#chat-input" className="hover:underline">Ask a Question</a></li>
+        </ul>
+      </nav>
           <Header />
           <main className="flex-grow container mx-auto max-w-4xl p-4 flex flex-col overflow-hidden">
 
             {/* Pre-rendered SEO Intro */}
-            <section className="bg-white rounded-lg p-6 mb-4 shadow">
+            <section id='seo-intro' className="bg-white rounded-lg p-6 mb-4 shadow">
               <h1 className="text-2xl font-bold mb-2">Chat with Your AI Gardening Expert</h1>
               <p className="mb-2">Welcome to your AI plant expert! Ask about pest identification, watering schedules, and more to keep your garden thriving.</p>
               <ul className="list-disc pl-6 text-sm text-gray-700">
@@ -154,7 +172,7 @@ export default function AskPage() {
             )}
 
             {/* Chat History Area */}
-            <div ref={chatContainerRef} className="flex-grow overflow-y-auto mb-4 p-4 bg-white rounded-lg border border-gray-200 shadow-sm">
+            <div ref={chatContainerRef} id='chat-history' className="flex-grow overflow-y-auto mb-4 p-4 bg-white rounded-lg border border-gray-200 shadow-sm">
               {chatHistory.length === 0 && !isLoading && isActiveSubscriber && (
                 <p className="text-center text-gray-500">Welcome to Garden AI! How can I help your garden today?</p>
               )}
@@ -174,7 +192,7 @@ export default function AskPage() {
             </div>
 
             {/* Input Form Area */}
-            <form onSubmit={handleSubmit} className="flex items-center space-x-2">
+            <form id='chat-input' onSubmit={handleSubmit} className="flex items-center space-x-2">
               <TextareaAutosize
                 minRows={1}
                 maxRows={6}

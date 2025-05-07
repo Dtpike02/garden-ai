@@ -6,6 +6,7 @@ export const metadata = {
 };
 export default function NaturalPestRemedies() {
   return (
+    <div>
     <article className="prose lg:prose-xl mx-auto py-16 bg-white rounded-2xl shadow-lg overflow-hidden p-8">
       {/* Hero Image */}
       <Image
@@ -291,5 +292,28 @@ export default function NaturalPestRemedies() {
             <p>Managing pests organically is an ongoing process of learning and adaptation. It requires patience, observation, and a willingness to work *with* nature&apos;s complex systems rather than against them. By prioritizing prevention, building healthy soil, encouraging biodiversity, correctly identifying problems, and choosing the least-toxic interventions when necessary, you can create a garden that is not only productive and beautiful but also a thriving, resilient ecosystem. Embrace the journey, celebrate the small successes, and enjoy the rewards of your healthy, organic harvest!</p>
           </footer>
     </article>
+    <script type="application/ld+json">
+    {`{
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Treat Aphids in 5 Steps",
+      "description": "Step-by-step guide to identify and eliminate aphids organically.",
+      "image": "https://gardenai.me/images/pest-control-hero.jpg",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Inspect your plants",
+          "text": "Look under leaves for small green or black insects."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Mix neem oil solution",
+          "text": "Combine 2 tsp neem oil with 1 quart of water and a drop of dish soap."
+        }
+        /* …more steps… */
+      ]
+    }`}
+    </script>
+    </div>    
   );
 }
