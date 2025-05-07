@@ -10,6 +10,7 @@ export default function VegetableGardening() {
   const lastFrostApprox = "early May"; // Approximate last spring frost for Columbus, OH
   const firstFrostApprox = "mid-October"; // Approximate first fall frost for Columbus, OH
   return (
+    <>
     <article className="prose lg:prose-xl mx-auto py-16 bg-white rounded-2xl shadow-lg overflow-hidden p-8">
       {/* Hero Image */}
             <Image
@@ -371,5 +372,6 @@ export default function VegetableGardening() {
             <p>Starting and maintaining a vegetable garden is a journey filled with learning, challenges, and immense rewards. From the first sprout pushing through the soil to the taste of a sun-warmed tomato picked straight from the vine, gardening connects us to the earth and provides unparalleled freshness. Don&apos;t be discouraged by setbacks; every season offers new lessons. Embrace the process, celebrate your harvests (big or small), and savor the delicious results of your hard work. Happy gardening!</p>
           </footer>
     </article>
+    </>
   );
 }

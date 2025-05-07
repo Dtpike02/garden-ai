@@ -33,6 +33,15 @@ export default function BlogIndexPage() {
           name="description"
           content="Explore our gardening guides: plant care, vegetable calendars, organic pest control tips, and more from Garden AI."
         />
+        <script type="application/ld+json">
+          {`{
+            "@context":"https://schema.org",
+            "@type":"ItemList",
+            "itemListElement": [
+              ${blogPosts.map((p, i) => `{"@type":"ListItem","position":${i+1},"url":"https://gardenai.me/blog/${p.slug}"}`).join(',')}
+            ]
+          }`}
+        </script>
       </Head>
 
       {/* Main container with background and padding */}

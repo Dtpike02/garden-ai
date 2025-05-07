@@ -1,6 +1,7 @@
 // File: src/app/ask/layout.tsx
 
 import { ReactNode } from 'react';
+import Head from 'next/head';
 
 export const metadata = {
   title: 'Chat with AI Gardening Assistant | Garden AI',
@@ -23,5 +24,39 @@ export const metadata = {
 };
 
 export default function AskLayout({ children }: { children: ReactNode }) {
-  return <>{children}</>;
+  return <>
+    <Head><script type="application/ld+json">
+{`{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I diagnose root rot?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes—simply describe the symptoms or upload a photo, and the AI will identify root rot."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How accurate are watering recommendations?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our AI tailors watering tips to your plant type and local climate data for optimal accuracy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What else can I ask?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can ask about pest ID, fertilization schedules, seasonal care, and more!"
+      }
+    }
+  ]
+}`}
+</script></Head>
+    {children}
+  </>;
 }
