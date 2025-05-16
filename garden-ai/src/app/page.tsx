@@ -174,7 +174,7 @@ export default function HomePage() {
               <div className="rounded-2xl p-6 flex flex-col items-center hover:shadow-2xl hover:scale-105 hover:bg-gray-50 transition-transform transition-shadow duration-300 ease-out">
                 <div className="bg-teal-100 rounded-full p-4 mb-4 inline-block"><UserCircleIcon className="h-10 w-10 text-teal-600" /></div>
                 <h3 className="text-xl font-semibold text-gray-700 mb-2">Mark T.</h3>
-                <p className="text-gray-600 text-center leading-relaxed">&quot;I love how easy it is to get expert advice. My plants have never looked better!&quot;</p>
+                <p className="text-gray-600 text-center leading-relaxed">&quot;I love how easy it is to get expert advice.&quot;</p>
               </div>
               {/* Testimonial 3 */}
               <div className="rounded-2xl p-6 flex flex-col items-center hover:shadow-2xl hover:scale-105 hover:bg-gray-50 transition-transform transition-shadow duration-300 ease-out">
