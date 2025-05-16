@@ -112,8 +112,8 @@ export default function HomePage() {
 
           {/* --- Features Section --- */}
         <section className="py-16 md:py-24 bg-white">
-        <section id="why-gardenai" className="py-16 md:py-24 bg-white">
-  <div className="container mx-auto px-6 max-w-3xl text-center">
+        <section id="why-gardenai" className="py-16 md:py-24 bg-[url('/flower-background.png')] bg-cover bg-center">
+  <div className="container mx-auto px-6 max-w-3xl text-center ">
     <h2 className="text-3xl md:text-4xl font-semibold text-gray-800 mb-6">
       Cultivating Confident Gardeners, Powered by AI
     </h2>
