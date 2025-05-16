@@ -112,31 +112,24 @@ export default function HomePage() {
 
           {/* --- Features Section --- */}
         <section className="py-16 md:py-24 bg-white">
-          <div className="container mx-auto px-6 text-center">
-            <h2 className="text-3xl md:text-4xl font-semibold text-gray-800 mb-12">
-              Why Choose Garden AI?
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
-              {/* Feature 1 */}
-              <div className=" rounded-2xl p-6 flex flex-col items-center hover:shadow-2xl hover:scale-105 hover:bg-gray-50 transition-transform transition-shadow duration-300 ease-out">
-                 <div className="bg-green-100 rounded-full p-4 mb-4 inline-block"><SparklesIcon className="h-10 w-10 text-green-600" /></div>
-                 <h3 className="text-xl font-semibold text-gray-700 mb-2">Instant AI Advice</h3>
-                 <p className="text-gray-600 text-center leading-relaxed">No more endless searching. Get immediate, AI-powered answers to your specific gardening questions, 24/7.</p>
-              </div>
-              {/* Feature 2 */}
-              <div className="rounded-2xl p-6 flex flex-col items-center hover:shadow-2xl hover:scale-105 hover:bg-gray-50 transition-transform transition-shadow duration-300 ease-out">
-                <div className="bg-teal-100 rounded-full p-4 mb-4 inline-block"><WrenchScrewdriverIcon className="h-10 w-10 text-teal-600" /></div>
-                <h3 className="text-xl font-semibold text-gray-700 mb-2">Problem Diagnosis</h3>
-                <p className="text-gray-600 text-center leading-relaxed">Describe your plant&apos;s symptoms, and our AI can help identify potential diseases, pests, or nutrient deficiencies.</p>
-              </div>
-              {/* Feature 3 */}
-              <div className="rounded-2xl p-6 flex flex-col items-center hover:shadow-2xl hover:scale-105 hover:bg-gray-50 transition-transform transition-shadow duration-300 ease-out">
-                 <div className="bg-cyan-100 rounded-full p-4 mb-4 inline-block"><SunIcon className="h-10 w-10 text-cyan-600" /></div>
-                 <h3 className="text-xl font-semibold text-gray-700 mb-2">Personalized Care Tips</h3>
-                 <p className="text-gray-600 text-center leading-relaxed">Receive tailored advice on watering, fertilizing, lighting, and pruning based on your specific plants and conditions.</p>
-              </div>
-            </div>
-          </div>
+        <section id="why-gardenai" className="py-16 md:py-24 bg-white">
+  <div className="container mx-auto px-6 max-w-3xl text-center">
+    <h2 className="text-3xl md:text-4xl font-semibold text-gray-800 mb-6">
+      Cultivating Confident Gardeners, Powered by AI
+    </h2>
+    <div className="space-y-6 text-gray-700 text-lg leading-relaxed">
+      <p>
+        Tired of endless online searches and conflicting gardening advice? GardenAI solves the core problem of getting reliable, quick, and personalized help for your specific plant care needs. We bridge the gap between complex horticultural knowledge and your everyday gardening questions.
+      </p>
+      <p>
+        Our unique AI assistant provides instant, tailored advice that goes beyond generic tips. Whether you&apos;re diagnosing a mysterious pest, figuring out the perfect watering schedule, or choosing the right plants for your space, GardenAI acts as your knowledgeable, always-available gardening companion, offering guidance rooted in horticultural science.
+      </p>
+      <p>
+        Our mission is to make expert gardening knowledge accessible to everyone, from novice plant parents to seasoned green thumbs. We believe that with the right support, anyone can cultivate a thriving garden. GardenAI is here to empower you with the confidence and insights to help your plants flourish.
+      </p>
+    </div>
+  </div>
+</section>
         </section>
         <section className=' flex flex-col items-center justify-center bg-gray-100'>
           <h2 className='text-3xl md:text-4xl font-semibold text-gray-800 mx-auto text-center mt-12'>It&apos;s As Easy As Texting!</h2>
@@ -158,6 +151,91 @@ export default function HomePage() {
 
         </section>
         </section>
+        <section id="pricing" className="py-16 md:py-24 bg-gray-50">
+  <div className="container mx-auto px-6 text-center">
+    <h2 className="text-3xl md:text-4xl font-semibold text-gray-800 mb-12">
+      Find the Perfect Plan for Your Flourishing Garden
+    </h2>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      {/* Tier 1: Sprout Plan (Free Trial) */}
+      <div className="bg-white rounded-xl shadow-lg p-8 flex flex-col hover:shadow-2xl transition-shadow duration-300">
+        <h3 className="text-2xl font-semibold text-green-700 mb-2">Sprout Plan</h3>
+        <p className="text-4xl font-bold text-gray-800 mb-4">$0 <span className="text-lg font-normal text-gray-500">/ 7-Day Trial</span></p>
+        <ul className="text-left space-y-3 text-gray-600 mb-8 flex-grow">
+          <li className="flex items-center">
+            <svg className="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
+            Access to AI for 5 questions
+          </li>
+          <li className="flex items-center">
+            <svg className="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
+            Basic plant problem diagnosis
+          </li>
+          <li className="flex items-center">
+            <svg className="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
+            General care tips
+          </li>
+        </ul>
+        <a href="#" className="mt-auto inline-block bg-gray-200 text-green-800 font-semibold py-3 px-8 rounded-lg hover:bg-gray-300 transition duration-300 ease-in-out">
+          Start Your Free Trial
+        </a>
+      </div>
+
+      {/* Tier 2: Bloom Plan (Premium) - Highlighted */}
+      <div className="bg-green-600 text-white rounded-xl shadow-2xl p-8 flex flex-col ring-4 ring-green-300 transform scale-100 lg:scale-105">
+        <div className="relative">
+            <span className="absolute top-0 right-0 bg-yellow-400 text-yellow-900 text-xs font-semibold px-3 py-1 rounded-full -mt-4 -mr-4">Recommended</span>
+        </div>
+        <h3 className="text-2xl font-semibold mb-2">Bloom Plan</h3>
+        <p className="text-4xl font-bold mb-4">$9.99 <span className="text-lg font-normal opacity-80">/ month</span></p>
+        <ul className="text-left space-y-3 opacity-90 mb-8 flex-grow">
+          <li className="flex items-center">
+            <svg className="w-5 h-5 text-yellow-400 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
+            Unlimited AI gardening questions
+          </li>
+          <li className="flex items-center">
+            <svg className="w-5 h-5 text-yellow-400 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
+            Advanced plant problem diagnosis
+          </li>
+          <li className="flex items-center">
+            <svg className="w-5 h-5 text-yellow-400 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
+            Personalized care plans
+          </li>
+          <li className="flex items-center">
+            <svg className="w-5 h-5 text-yellow-400 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
+            Priority support
+          </li>
+          <li className="flex items-center">
+            <svg className="w-5 h-5 text-yellow-400 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
+            Save your plant profiles
+          </li>
+        </ul>
+        <a href="#" className="mt-auto inline-block bg-yellow-400 text-green-900 font-semibold py-3 px-8 rounded-lg hover:bg-yellow-500 transition duration-300 ease-in-out">
+          Subscribe to Bloom
+        </a>
+      </div>
+
+      {/* Tier 3: Full Bloom Plan (Annual) */}
+      <div className="bg-white rounded-xl shadow-lg p-8 flex flex-col hover:shadow-2xl transition-shadow duration-300">
+        <h3 className="text-2xl font-semibold text-green-700 mb-2">Full Bloom Plan</h3>
+        <p className="text-4xl font-bold text-gray-800 mb-1">$99.99 <span className="text-lg font-normal text-gray-500">/ year</span></p>
+        <p className="text-sm text-green-600 font-semibold mb-4">(Save 20%)</p>
+        <ul className="text-left space-y-3 text-gray-600 mb-8 flex-grow">
+          <li className="flex items-center">
+            <svg className="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
+            All Bloom Plan features
+          </li>
+           <li className="flex items-center">
+            <svg className="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
+            Best value for year-round support
+          </li>
+        </ul>
+        <a href="#" className="mt-auto inline-block bg-green-500 text-white font-semibold py-3 px-8 rounded-lg hover:bg-green-600 transition duration-300 ease-in-out">
+          Go Full Bloom & Save
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
         <section className="py-16 md:py-24 bg-white">
           <div className="container mx-auto px-6 text-center">
             <h2 className="text-3xl md:text-4xl font-semibold text-gray-800 mb-12">
@@ -174,7 +252,7 @@ export default function HomePage() {
               <div className="rounded-2xl p-6 flex flex-col items-center hover:shadow-2xl hover:scale-105 hover:bg-gray-50 transition-transform transition-shadow duration-300 ease-out">
                 <div className="bg-teal-100 rounded-full p-4 mb-4 inline-block"><UserCircleIcon className="h-10 w-10 text-teal-600" /></div>
                 <h3 className="text-xl font-semibold text-gray-700 mb-2">Mark T.</h3>
-                <p className="text-gray-600 text-center leading-relaxed">&quot;I love how easy it is to get expert advice. My plants have never looked better!&quot;</p>
+                <p className="text-gray-600 text-center leading-relaxed">&quot;I love how easy it is to get expert advice.&quot;</p>
               </div>
               {/* Testimonial 3 */}
               <div className="rounded-2xl p-6 flex flex-col items-center hover:shadow-2xl hover:scale-105 hover:bg-gray-50 transition-transform transition-shadow duration-300 ease-out">
@@ -221,6 +299,7 @@ export default function HomePage() {
              {error && <p className="text-red-200 text-sm mt-4">{error}</p>}
           </div>
         </section>
+        
       </main>
 
       {/* --- Footer --- */}
