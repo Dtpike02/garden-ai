@@ -7,10 +7,16 @@ import Image from 'next/image';
 
 export default function Header() {
   const { data: session, status } = useSession();
+  const router = useRouter();
 
-  const handleSignIn = () => {
-    // Standard sign-in, redirect to /ask on success
-    signIn('google', { callbackUrl: '/ask' });
+  const handleSignIn = async () => {
+    // Manually handle redirect so we can catch errors
+    const res = await signIn(undefined, { callbackUrl: '/ask', redirect: false });
+    if (res?.error) {
+      router.push(`/auth/error?error=${encodeURIComponent(res.error)}`);
+    } else if (res?.url) {
+      router.push(res.url);
+    }
   };
 
   const handleSignOut = async () => {
@@ -89,3 +95,4 @@ export default function Header() {
     </header>
   )
 }
+
