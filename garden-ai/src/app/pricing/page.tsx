@@ -3,6 +3,7 @@
 
 import { useState, useEffect } from 'react';
 import { useSession, signIn } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
 import { loadStripe, Stripe } from '@stripe/stripe-js';
 import Header from '@/components/Header'; // Adjust path if needed
 import Head from 'next/head';
@@ -24,6 +25,7 @@ export default function PricingPage() {
     const [isLoading, setIsLoading] = useState<string | null>(null); // Store Price ID of loading button
     const [error, setError] = useState<string | null>(null);
     const { data: session, status } = useSession();
+    const router = useRouter();
 
     // Get Price IDs from environment variables
     // Ensure these are prefixed with NEXT_PUBLIC_ in your .env.local
@@ -38,7 +40,12 @@ export default function PricingPage() {
 
     const handleSubscription = async (priceId: string, isTrial: boolean = false) => {
         if (status === 'unauthenticated') {
-            signIn('google', { callbackUrl: '/pricing' }); // Redirect to sign-in, then back to pricing
+            const res = await signIn('google', { callbackUrl: '/pricing', redirect: false });
+            if (res?.url) {
+                router.push(res.url);
+            } else if (res?.error) {
+                router.push(`/auth/error?error=${encodeURIComponent(res.error)}`);
+            }
             return;
         }
         if (status === 'loading' || !session?.user) {
