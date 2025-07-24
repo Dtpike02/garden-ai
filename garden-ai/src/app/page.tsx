@@ -49,7 +49,9 @@ export default function HomePage() {
       return;
     }
     if (status === 'unauthenticated') {
-      const res = await signIn('google', { callbackUrl: '/ask', redirect: false });
+
+      const res = await signIn(undefined, { callbackUrl: '/ask', redirect: false });
+
       if (res?.url) {
         router.push(res.url);
       } else if (res?.error) {
@@ -277,7 +279,7 @@ export default function HomePage() {
                     Get Started in 3 Easy Steps
                 </h2>
                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left md:text-center max-w-4xl mx-auto">
-                     <div className="p-6 bg-white rounded-lg shadow hover:shadow-2xl hover:scale-105 hover:bg-gray-50 transition-transform transition-shadow duration-300 ease-out"><span className="text-3xl font-bold text-green-500 block mb-2">1</span><h4 className="font-semibold text-lg mb-1 text-gray-700">Sign Up / Log In</h4><p className="text-sm text-gray-600">Create your account or log in instantly using Google.</p></div>
+                     <div className="p-6 bg-white rounded-lg shadow hover:shadow-2xl hover:scale-105 hover:bg-gray-50 transition-transform transition-shadow duration-300 ease-out"><span className="text-3xl font-bold text-green-500 block mb-2">1</span><h4 className="font-semibold text-lg mb-1 text-gray-700">Sign Up / Log In</h4><p className="text-sm text-gray-600">Create your account or log in instantly with your email.</p></div>
                       <div className="p-6 bg-white rounded-lg shadow hover:shadow-2xl hover:scale-105 hover:bg-gray-50 transition-transform transition-shadow duration-300 ease-out"><span className="text-3xl font-bold text-green-500 block mb-2">2</span><h4 className="font-semibold text-lg mb-1 text-gray-700">Subscribe</h4><p className="text-sm text-gray-600">Choose a plan to unlock full access to the AI assistant features.</p></div>
                       <div className="p-6 bg-white rounded-lg shadow hover:shadow-2xl hover:scale-105 hover:bg-gray-50 transition-transform transition-shadow duration-300 ease-out"><span className="text-3xl font-bold text-green-500 block mb-2">3</span><h4 className="font-semibold text-lg mb-1 text-gray-700">Ask Anything!</h4><p className="text-sm text-gray-600">Start chatting with the AI and get expert gardening advice instantly.</p></div>
                  </div>
@@ -318,3 +320,4 @@ export default function HomePage() {
     </>
   );
 }
+

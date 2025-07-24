@@ -11,7 +11,8 @@ export default function Header() {
 
   const handleSignIn = async () => {
     // Manually handle redirect so we can catch errors
-    const res = await signIn('google', { callbackUrl: '/ask', redirect: false });
+    const res = await signIn(undefined, { callbackUrl: '/ask', redirect: false });
+
     if (res?.error) {
       router.push(`/auth/error?error=${encodeURIComponent(res.error)}`);
     } else if (res?.url) {
@@ -95,3 +96,4 @@ export default function Header() {
     </header>
   )
 }
+
