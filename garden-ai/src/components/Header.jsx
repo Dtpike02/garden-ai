@@ -7,6 +7,7 @@ import Image from 'next/image';
 
 export default function Header() {
   const { data: session, status } = useSession();
+  const router = useRouter();
 
   const handleSignIn = () => {
     // Standard sign-in, redirect to /ask on success
