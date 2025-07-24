@@ -49,7 +49,12 @@ export default function HomePage() {
       return;
     }
     if (status === 'unauthenticated') {
-      signIn('google', { callbackUrl: '/ask' });
+      const res = await signIn('google', { callbackUrl: '/ask', redirect: false });
+      if (res?.url) {
+        router.push(res.url);
+      } else if (res?.error) {
+        router.push(`/auth/error?error=${encodeURIComponent(res.error)}`);
+      }
       return;
     }
     if (status === 'authenticated') {
