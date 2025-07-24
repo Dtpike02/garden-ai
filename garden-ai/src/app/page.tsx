@@ -49,7 +49,9 @@ export default function HomePage() {
       return;
     }
     if (status === 'unauthenticated') {
+
       const res = await signIn(undefined, { callbackUrl: '/ask', redirect: false });
+
       if (res?.url) {
         router.push(res.url);
       } else if (res?.error) {

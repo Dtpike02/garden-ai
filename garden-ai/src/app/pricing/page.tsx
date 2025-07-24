@@ -40,7 +40,9 @@ export default function PricingPage() {
 
     const handleSubscription = async (priceId: string, isTrial: boolean = false) => {
         if (status === 'unauthenticated') {
+
             const res = await signIn(undefined, { callbackUrl: '/pricing', redirect: false });
+
             if (res?.url) {
                 router.push(res.url);
             } else if (res?.error) {
