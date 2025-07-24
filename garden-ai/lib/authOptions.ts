@@ -12,6 +12,8 @@ export const authOptions: AuthOptions = {
         GoogleProvider({
             clientId: process.env.GOOGLE_ID!,
             clientSecret: process.env.GOOGLE_SECRET!,
+            // Allow accounts with the same email to be linked across providers
+            allowDangerousEmailAccountLinking: true,
         })
     ],
     secret: process.env.NEXTAUTH_SECRET,
