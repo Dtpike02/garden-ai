@@ -1,8 +1,9 @@
 'use client';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
+import { Suspense } from 'react';
 
-export default function AuthErrorPage() {
+function ErrorContent() {
   const params = useSearchParams();
   const error = params.get('error');
 
@@ -12,5 +13,13 @@ export default function AuthErrorPage() {
       <p className="mb-6 text-red-600">{error || 'Unable to sign in. Please try again.'}</p>
       <Link href="/" className="text-green-700 underline">Go back home</Link>
     </div>
+  );
+}
+
+export default function AuthErrorPage() {
+  return (
+    <Suspense>
+      <ErrorContent />
+    </Suspense>
   );
 }
